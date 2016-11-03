@@ -17,18 +17,20 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
   });
 
   it('should return "fizz" for numbers divisible by 3', function () {
-    let result = fizzBuzz(0);
-    assert.equal(result, 0);
+    let fizzBuzzArray = fizzBuzz(1, 100);
+    let result = fizzBuzzArray[2]
+    assert.equal(result, fizzBuzzArray[2]);
   });
 
   it('should return "buzz" for numbers divisible by 5', function () {
-    let result = fizzBuzz(0);
-    assert.equal(result, 0);
+    let fizzBuzzArray = fizzBuzz(1, 100);
+    let result = fizzBuzzArray[4]
+    assert.equal(result, fizzBuzzArray[5]);
   });
 
   it('should return "fizzbuzz" for numbers divisible by 15', function () {
-    let result = fizzBuzz(0);
-    assert.equal(result, 0);
+    let result = fizzBuzz(15);
+    assert.equal(result, "fizzbuzz");
   });
 
 });
