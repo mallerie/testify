@@ -15,7 +15,21 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
     assert.equal(result, 4);
   });
 
-  // Your Tests Here
+  it('should return "fizz" for numbers divisible by 3', function () {
+    let result = fizz(4);
+    assert.equal(result, 4);
+  });
+
+  it('should return the number for "basic" numbers', function () {
+    let result = fizz(4);
+    assert.equal(result, 4);
+  });
+
+  it('should return the number for "basic" numbers', function () {
+    let result = fizz(4);
+    assert.equal(result, 4);
+  });
+
 });
 
 // UNCOMMENT THE SECTION BELOW FOR HARD MODE

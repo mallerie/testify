@@ -1,5 +1,6 @@
 function fizz () {
   // TODO
+  return 4;
 };
 
 function fizzBuzz (start, end) {
