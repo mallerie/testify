@@ -1,6 +1,7 @@
 function fizz (x) {
   return x;
 };
+
 var array = []; 
 
 function fizzBuzz (start, end) {
