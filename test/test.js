@@ -21,14 +21,14 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
     assert.equal(result, 0);
   });
 
-  it.skip('should return "buzz" for numbers divisible by 3', function () {
-    let result = fizz(4);
-    assert.equal(result, 4);
+  it('should return "buzz" for numbers divisible by 5', function () {
+    let result = fizzBuzz(0);
+    assert.equal(result, 0);
   });
 
-  it.skip('should return the number for "basic" numbers', function () {
-    let result = fizz(4);
-    assert.equal(result, 4);
+  it('should return "fizzbuzz" for numbers divisible by 15', function () {
+    let result = fizzBuzz(0);
+    assert.equal(result, 0);
   });
 
 });
