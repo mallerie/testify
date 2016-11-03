@@ -29,8 +29,9 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
   });
 
   it('should return "fizzbuzz" for numbers divisible by 15', function () {
-    let result = fizzBuzz(15);
-    assert.equal(result, "fizzbuzz");
+    let fizzBuzzArray = fizzBuzz(1, 100);
+    let result = fizzBuzzArray[14]
+    assert.equal(result, fizzBuzzArray[14]);
   });
 
 });
