@@ -3,6 +3,7 @@ import chai from 'chai';
 
 // Import Any Files to Test
 import { fizz } from "../src/js/main";
+import { fizzBuzz } from "../src/js/main";
 
 // Set Chai Constants
 const expect = chai.expect;
@@ -16,16 +17,16 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
   });
 
   it('should return "fizz" for numbers divisible by 3', function () {
+    let result = fizzBuzz(0);
+    assert.equal(result, 0);
+  });
+
+  it.skip('should return "buzz" for numbers divisible by 3', function () {
     let result = fizz(4);
     assert.equal(result, 4);
   });
 
-  it('should return the number for "basic" numbers', function () {
-    let result = fizz(4);
-    assert.equal(result, 4);
-  });
-
-  it('should return the number for "basic" numbers', function () {
+  it.skip('should return the number for "basic" numbers', function () {
     let result = fizz(4);
     assert.equal(result, 4);
   });
