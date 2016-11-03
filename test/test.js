@@ -215,7 +215,7 @@ describe('An inventory system ...', function () {
   it.skip("test_conjured_item_before_sell_date", function () {
     let item = new GildedRose(5, 10, 'Conjured Mana Cake');
     item.tick();
-    assert.equal(8, item.quality);
+    assert.equal(9, item.quality);
     assert.equal(4, item.sellIn);
   });
 
