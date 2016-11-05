@@ -1,6 +1,6 @@
-import { GildedRose } from "../src/js/hard";
+// import { GildedRose } from "../src/js/hard";
 
-class GildedRose {
+class GildedRoseRefactor {
   constructor (sellIn, quality, name) {
     this.name = name;
     this.sellIn = sellIn;
@@ -40,8 +40,8 @@ class GildedRose {
 
 }
 
-var cake = new GildedRose(5, 10, 'Conjured Mana Cake');
-cake.tick();
+export { GildedRose };
+
 
 
 
