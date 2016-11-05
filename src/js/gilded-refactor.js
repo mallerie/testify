@@ -26,8 +26,15 @@ class GildedRose {
       this.quality >= 50 ? this.quality = 50 : this.quality += 1;
     }
 
-    this.sellIn < 0 ? this.quality -= 2 : this.quality -= 1;
-    this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
+    if (item.name = "Sulfuras") {
+      this.quality = 80;
+      this.sellIn = null;
+    } else {
+      this.sellIn < 0 ? this.quality -= 2 : this.quality -= 1;
+      this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
+      
+    }
+
 
   }
 
