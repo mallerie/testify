@@ -33,7 +33,7 @@ class GildedRose {
     if (this.name != 'Sulfuras, Hand of Ragnaros') {
       this.sellIn = this.sellIn - 1;
     }
-    
+
     if (this.sellIn < 0) {
       if (this.name != 'Aged Brie') {
         if (this.name != 'Backstage passes to a TAFKAL80ETC concert') {
@@ -54,4 +54,4 @@ class GildedRose {
   }
 }
 
-export { GildedRose };
+// export { GildedRose };

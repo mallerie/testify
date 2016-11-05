@@ -38,7 +38,8 @@ describe('Fizzbuzz returns values for different kinds of numbers', function () {
 
 // UNCOMMENT THE SECTION BELOW FOR HARD MODE
 
-import { GildedRose } from "../src/js/hard";
+// import { GildedRose } from "../src/js/hard";
+import { GildedRose } from "../src/js/gilded-refactor";
 
 describe('An inventory system ...', function () {
   it("test_normal_item_before_sell_date", function () {
