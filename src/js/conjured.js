@@ -8,8 +8,8 @@ class GildedRose {
   }
 
   tick() {
-    this.sellIn < 0 ? this.sellIn -= 2 : this.sellIn -= 1;
-    this.quality -= 1;
+    this.sellIn < 0 ? this.quality -= 2 : this.quality -= 1;
+    this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
   }
 
 }
