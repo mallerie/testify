@@ -5,15 +5,47 @@ class GildedRose {
     this.quality = quality;
   }
 
+  normal() {
+    this.quality -= 1;
+    this.limitations();
+  }
+
+  expired() {
+    this.quality -= 2;
+  }
+
+  brie() {
+    this.quality += 1;
+  }
+
+  agedBrie() {
+    this.quality += 2;
+  }
+
+  limitations() {
+    // Checks if any values are outide the bounds and corrects them.
+    if (this.quality <= 0) {
+      this.quality = 0;
+    } else if (this.quality >= 50) {
+      this.quality = 50;
+    }
+  }
+
   tick() {
+    this.sellIn -= 1;
+
     // this.sellIn <= 0 ? this.quality -= 1 : this.quality = this.quality;
     // // this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
     // this.sellIn -= 1;
     // this.quality <= 0 ? this.quality = this.quality : this.quality -= 1;
-    if (this.name == "normal") {
-      qualityDecrease();
-      sellInDecrease();
-      limitations();
+    if (this.name == "normal" && this.sellIn > 0) {
+      this.normal();
+    } else if (this.name == "normal" && this.sellIn <= 0) {
+      this.expired();
+    } else if (this.name == "Aged Brie" && this.sellIn > 0) {
+      this.brie();
+    } else if (this.name == "Aged Brie" && this.sellIn <= 0) {
+      this.agedBrie();
     }
 
     // if (this.sellIn <= 0) {
@@ -47,34 +79,14 @@ class GildedRose {
     //   this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
       
     // }
-
+    this.limitations();
   }
 
   // Make three methods that run, and if none of those is true, then tick runs...
 
 }
 
-  sellInDecrease() {
-    this.sellIn -= 1;
-  }
 
-  qualityDecrease() {
-    this.quality -= 1;
-  }
-
-  qualityIncrease() {
-    this.quality += 1;
-  }
-
-  limitations() {
-    // Checks if any values are outide the bounds and corrects them.
-    if (this.quality <= 0) {
-      this.quality = 0;
-    } else if (this.quality >= 50) {
-      this.quality = 50;
-    }
-  }
-  
 export { GildedRose };
 
 
