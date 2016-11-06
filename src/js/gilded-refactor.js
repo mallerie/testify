@@ -7,7 +7,6 @@ class GildedRose {
 
   normal() {
     this.quality -= 1;
-    this.limitations();
   }
 
   expired() {
@@ -22,14 +21,23 @@ class GildedRose {
     this.quality += 2;
   }
 
+  sulfuras() {
+    this.sellIn += 1;
+    this.quality = 80;
+  }
+
   limitations() {
     // Checks if any values are outide the bounds and corrects them.
-    if (this.quality <= 0) {
+    if (this.name == "Sulfuras, Hand of Ragnaros") {
+      this.quality = 80;
+    } else if (this.quality <= 0) {
       this.quality = 0;
     } else if (this.quality >= 50) {
       this.quality = 50;
     }
   }
+
+
 
   tick() {
     this.sellIn -= 1;
@@ -46,6 +54,8 @@ class GildedRose {
       this.brie();
     } else if (this.name == "Aged Brie" && this.sellIn <= 0) {
       this.agedBrie();
+    } else if (this.name == "Sulfuras, Hand of Ragnaros") {
+      this.sulfuras();
     }
 
     // if (this.sellIn <= 0) {
