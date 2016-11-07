@@ -9,7 +9,7 @@ class GildedRose {
     this.quality -= 1;
   }
 
-  expired() {
+  perishing() {
     this.quality -= 2;
   }
 
@@ -17,13 +17,20 @@ class GildedRose {
     this.quality += 1;
   }
 
-  agedBrie() {
-    this.quality += 2;
-  }
-
   sulfuras() {
     this.sellIn += 1;
-    this.quality = 80;
+  }
+
+  backstage() {
+    if (this.sellIn >= 10) {
+      this.quality +=1;
+    } else if (this.sellIn < 10 && this.sellIn >= 5) {
+      this.quality +=2;
+    } else if (this.sellIn < 5 && this.sellIn >= 0) {
+      this.quality += 3;
+    } else if (this.sellIn < 0) {
+      this.quality = 0;
+    }
   }
 
   limitations() {
@@ -37,65 +44,31 @@ class GildedRose {
     }
   }
 
-
-
   tick() {
     this.sellIn -= 1;
 
-    // this.sellIn <= 0 ? this.quality -= 1 : this.quality = this.quality;
-    // // this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
-    // this.sellIn -= 1;
-    // this.quality <= 0 ? this.quality = this.quality : this.quality -= 1;
     if (this.name == "normal" && this.sellIn > 0) {
       this.normal();
     } else if (this.name == "normal" && this.sellIn <= 0) {
-      this.expired();
+      this.perishing();
     } else if (this.name == "Aged Brie" && this.sellIn > 0) {
       this.brie();
     } else if (this.name == "Aged Brie" && this.sellIn <= 0) {
-      this.agedBrie();
+      this.brie();
+      this.brie();
     } else if (this.name == "Sulfuras, Hand of Ragnaros") {
       this.sulfuras();
+    } else if (this.name == "Backstage passes to a TAFKAL80ETC concert") {
+      this.backstage();
+    } else if (this.name == "Conjured Mana Cake" && this.sellIn > 0) {
+      this.perishing();
+    } else if (this.name == "Conjured Mana Cake" && this.sellIn <= 0) {
+      this.perishing();
+      this.perishing();
     }
-
-    // if (this.sellIn <= 0) {
-    //   this.quality -= 1;
-    // }
-    // if (this.name == "Conjured Mana Cake") {
-    //   this.quality >= 50 ? this.quality = 50 : this.quality -= 2;
-    // }
-
-    // if (this.name == "Backstage passes to a TAFKAL80ETC concert") {
-    //   if (this.sellIn <= 10) {
-    //     this.quality += 1;
-    //   } else if (this.sellIn <= 5) {
-    //     this.quality += 2;
-    //   } else if (this.sellIn < 0) {
-    //     this.quality = 0;
-    //   } else {
-
-    //   }
-    // }
-
-    // if (this.name == "Backstage passes to a TAFKAL80ETC concert" || this.name == "Aged Brie") {
-    //   this.quality >= 50 ? this.quality = 50 : this.quality += 1;
-    // }
-
-    // if (this.name == "Sulfuras") {
-    //   this.quality = 80;
-    //   this.sellIn = null;
-    // } else {
-    //   this.sellIn < 0 ? this.quality -= 2 : this.quality -= 1;
-    //   this.quality >= 50 ? this.quality = 50 : this.quality-= 1;
-      
-    // }
     this.limitations();
   }
-
-  // Make three methods that run, and if none of those is true, then tick runs...
-
 }
-
 
 export { GildedRose };
 
